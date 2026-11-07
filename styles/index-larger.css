@@ -92,13 +92,13 @@ nav a:hover {
 main {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 12px 16px;
+    gap: 16px 20px;
 }
 
 main h1 {
     grid-column: 1 / -1;
     margin: 0;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
 }
 
 section {
@@ -109,21 +109,34 @@ section {
 section h2 {
     margin: 0;
     text-align: center;
-    padding: 6px;
+    padding: 10px 12px;
     background: var(--color-crimson);
     color: var(--color-bright-gold);
-    font-size: 0.95rem;
+    font-size: 1rem;
 }
 
 section p {
-    margin: 10px;
-    line-height: 1.5;
+    margin: 16px auto;
+    line-height: 1.6;
+}
+
+.about-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-section p {
+    display: grid;
+    flex: 1;
+    place-items: center;
+    max-width: 64ch;
+    padding: 20px;
 }
 
 section img {
     width: min(60%, 220px);
     height: 220px;
-    margin: 16px auto;
+    margin: 20px auto;
     object-fit: cover;
     border-radius: 4px;
 }
@@ -131,14 +144,14 @@ section img {
 .certificates {
     grid-column: 1 / -1;
     display: grid;
-    gap: 8px;
-    padding: 8px;
+    gap: 12px;
+    padding: 12px;
 }
 
 .certificate-buttons {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 8px;
+    gap: 12px;
 }
 
 .certificates h2,
@@ -176,7 +189,7 @@ section img {
 .course-list {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 8px;
+    gap: 12px;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -186,9 +199,9 @@ section img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     width: 100%;
-    padding: 10px;
+    padding: 14px;
     border: 1px solid var(--color-border);
     border-radius: 4px;
     background: var(--color-surface-raised);
@@ -225,8 +238,8 @@ section li {
 }
 
 footer {
-    margin-top: 12px;
-    padding: 10px;
+    margin-top: 16px;
+    padding: 16px;
     color: var(--color-bright-gold);
     background: var(--color-crimson);
     text-align: center;
@@ -235,7 +248,7 @@ footer {
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 12px;
 }
 
 .social-links img {
