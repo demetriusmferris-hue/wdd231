@@ -9,8 +9,12 @@
         font-size: 1.2rem;
     }
 
-    .menu-toggle {
+    .js .menu-toggle {
         display: none;
+    }
+
+    .js .primary-navigation:not(.is-open) {
+        display: flex;
     }
 
     .primary-navigation,
