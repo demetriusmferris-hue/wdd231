@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+    <rect width="160" height="160" rx="18" fill="#f4eadb"/>
+    <path d="M39 59h72v47a16 16 0 0 1-16 16H55a16 16 0 0 1-16-16z" fill="#8a593b"/>
+    <path d="M111 70h11a15 15 0 0 1 0 30h-11" fill="none" stroke="#8a593b" stroke-width="9"/>
+    <path d="M51 47c-6-9 5-11 0-20m25 20c-6-9 5-11 0-20m25 20c-6-9 5-11 0-20" fill="none" stroke="#d59d5d" stroke-linecap="round" stroke-width="4"/>
+    <text x="80" y="146" fill="#183331" font-family="Arial" font-size="10" font-weight="700" text-anchor="middle">MAUI SUNRISE</text>
+</svg>

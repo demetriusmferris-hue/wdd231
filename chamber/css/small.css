@@ -1,0 +1,286 @@
+:root {
+    color-scheme: dark;
+    --color-primary: #450000;
+    --color-primary-dark: #2e0000;
+    --color-accent: #ffd700;
+    --color-background: #2b2b2b;
+    --color-surface: #240a0a;
+    --color-text: #f2c94c;
+    --color-muted: #d6b95c;
+    --content-width: 72rem;
+}
+
+body {
+    background: var(--color-background);
+    color: var(--color-text);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    color: var(--color-accent);
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 3px;
+}
+
+.site-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem max(1rem, calc((100% - var(--content-width)) / 2));
+    background: var(--color-primary);
+    color: var(--color-accent);
+}
+
+.site-brand {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    gap: 0.65rem;
+    color: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-decoration: none;
+}
+
+.site-brand img {
+    flex: 0 0 2.75rem;
+    width: 2.75rem;
+    height: 2.75rem;
+}
+
+.menu-toggle {
+    display: none;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0.45rem;
+    border: 1px solid var(--color-accent);
+    border-radius: 0.3rem;
+    background: transparent;
+}
+
+.js .menu-toggle {
+    display: block;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 2px;
+    margin: 5px 0;
+    background: var(--color-accent);
+}
+
+.primary-navigation {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.js .primary-navigation:not(.is-open) {
+    display: none;
+}
+
+.js .primary-navigation.is-open {
+    display: flex;
+}
+
+.primary-navigation a {
+    padding: 0.65rem 0.85rem;
+    border-radius: 0.25rem;
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+.primary-navigation a:hover,
+.primary-navigation a[aria-current="page"] {
+    background: var(--color-primary-dark);
+    color: var(--color-accent);
+}
+
+main {
+    width: min(100% - 2rem, var(--content-width));
+    min-height: 20rem;
+    margin: 0 auto;
+    padding: 2rem 0 3rem;
+}
+
+h1 {
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+    line-height: 1.15;
+}
+
+.intro {
+    margin-top: 0.65rem;
+    color: var(--color-muted);
+}
+
+.directory-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin: 1.5rem 0 1rem;
+}
+
+.directory-controls button {
+    min-width: 7rem;
+    min-height: 2.75rem;
+    padding: 0.55rem 1rem;
+    border: 2px solid var(--color-primary);
+    border-radius: 0.3rem;
+    background: var(--color-surface);
+    color: var(--color-text);
+    font-weight: 700;
+}
+
+.directory-controls button[aria-pressed="true"],
+.directory-controls button:hover {
+    background: var(--color-primary);
+    color: var(--color-accent);
+}
+
+.directory-status {
+    min-height: 1.5em;
+    margin-bottom: 1rem;
+    color: var(--color-muted);
+    text-align: center;
+}
+
+.business-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+}
+
+.business-card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--color-muted);
+    border-radius: 0.55rem;
+    background: var(--color-surface);
+    box-shadow: 0 2px 8px rgb(0 0 0 / 25%);
+}
+
+.business-card-heading {
+    padding: 1rem 1rem 0.25rem;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.business-card-tagline {
+    padding: 0 1rem 0.75rem;
+    border-bottom: 2px solid var(--color-accent);
+    color: var(--color-muted);
+    text-align: center;
+}
+
+.business-card-details {
+    display: grid;
+    grid-template-columns: minmax(4.5rem, 30%) minmax(0, 1fr);
+    align-items: start;
+    gap: 0.85rem;
+    padding: 1rem;
+}
+
+.business-card-logo {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: contain;
+}
+
+.business-card-info {
+    min-width: 0;
+}
+
+.business-card-info p {
+    margin-bottom: 0.55rem;
+    overflow-wrap: anywhere;
+}
+
+.business-card-info p:last-child {
+    margin-bottom: 0;
+}
+
+.membership-level {
+    display: inline-block;
+    padding: 0.1rem 0.45rem;
+    border-radius: 1rem;
+    background: var(--color-primary-dark);
+    color: var(--color-accent);
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+
+.business-list {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+}
+
+.business-list .business-card {
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.business-list .business-card + .business-card {
+    border-top: 0;
+}
+
+.business-list .business-card:nth-child(even) {
+    background: var(--color-primary-dark);
+}
+
+.business-list .business-card-details {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    padding-top: 0.65rem;
+}
+
+.business-list .business-card-logo {
+    display: none;
+}
+
+.site-footer {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    padding: 1.5rem max(1rem, calc((100% - var(--content-width)) / 2));
+    background: var(--color-primary-dark);
+}
+
+.footer-contact h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.footer-contact address {
+    margin-bottom: 0.5rem;
+    font-style: normal;
+}
+
+.footer-contact p,
+.footer-project p {
+    margin-top: 0.3rem;
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-project {
+    color: var(--color-muted);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .business-card,
+    .directory-controls button {
+        transition: background-color 150ms ease, color 150ms ease;
+    }
+}

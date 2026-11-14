@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+    <rect width="160" height="160" rx="18" fill="#e9eff8"/>
+    <circle cx="80" cy="88" r="31" fill="#5591bb"/>
+    <ellipse cx="49" cy="54" rx="12" ry="18" transform="rotate(-25 49 54)" fill="#5591bb"/>
+    <ellipse cx="75" cy="45" rx="12" ry="18" transform="rotate(-8 75 45)" fill="#5591bb"/>
+    <ellipse cx="102" cy="49" rx="12" ry="18" transform="rotate(15 102 49)" fill="#5591bb"/>
+    <ellipse cx="121" cy="68" rx="12" ry="18" transform="rotate(35 121 68)" fill="#5591bb"/>
+    <text x="80" y="145" fill="#183331" font-family="Arial" font-size="10" font-weight="700" text-anchor="middle">PAUWELA PETS</text>
+</svg>

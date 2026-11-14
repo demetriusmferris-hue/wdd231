@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+    <rect width="160" height="160" rx="18" fill="#f0eafa"/>
+    <path d="M34 113V55h13l22 30 22-30h13v58H90V81L69 108 47 81v32z" fill="#795da7"/>
+    <circle cx="118" cy="52" r="11" fill="#f0bf62"/>
+    <text x="80" y="142" fill="#183331" font-family="Arial" font-size="10" font-weight="700" text-anchor="middle">MAKAI CREATIVE</text>
+</svg>

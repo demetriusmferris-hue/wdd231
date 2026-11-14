@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+    <rect width="160" height="160" rx="18" fill="#e6f1eb"/>
+    <path d="M80 120c-37-23-40-54-18-70 11 8 18 19 18 32 0-27 17-43 39-41 8 31-4 60-39 79" fill="#57947d"/>
+    <path d="M80 117V72" stroke="#f0bf62" stroke-linecap="round" stroke-width="6"/>
+    <text x="80" y="146" fill="#183331" font-family="Arial" font-size="10" font-weight="700" text-anchor="middle">HANA WELLNESS</text>
+</svg>

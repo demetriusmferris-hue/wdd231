@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+    <rect width="160" height="160" rx="18" fill="#e6edf2"/>
+    <path d="m28 81 52-43 52 43v49H28z" fill="#397b91"/>
+    <path d="M67 130V91h26v39M44 83h19V65zM97 83h19V65z" fill="#f0bf62"/>
+    <text x="80" y="148" fill="#183331" font-family="Arial" font-size="10" font-weight="700" text-anchor="middle">NORTH SHORE</text>
+</svg>

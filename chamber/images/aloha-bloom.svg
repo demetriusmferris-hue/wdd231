@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+    <rect width="160" height="160" rx="18" fill="#f7e9ef"/>
+    <g fill="#d8789b">
+        <ellipse cx="80" cy="57" rx="15" ry="25"/>
+        <ellipse cx="80" cy="101" rx="15" ry="25"/>
+        <ellipse cx="58" cy="79" rx="25" ry="15"/>
+        <ellipse cx="102" cy="79" rx="25" ry="15"/>
+    </g>
+    <circle cx="80" cy="79" r="12" fill="#f0bf62"/>
+    <text x="80" y="145" fill="#183331" font-family="Arial" font-size="10" font-weight="700" text-anchor="middle">ALOHA BLOOM</text>
+</svg>

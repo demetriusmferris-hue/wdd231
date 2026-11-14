@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+    <rect width="160" height="160" rx="18" fill="#eaf3df"/>
+    <circle cx="80" cy="82" r="46" fill="#75a94b"/>
+    <path d="M80 123c-30-14-35-41-17-55 12 9 18 20 17 34 3-23 17-39 37-43 8 25-2 53-37 64" fill="#f0bf62"/>
+    <text x="80" y="148" fill="#183331" font-family="Arial" font-size="11" font-weight="700" text-anchor="middle">HARVEST</text>
+</svg>

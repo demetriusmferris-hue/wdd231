@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+    <rect width="1200" height="630" fill="#075b59"/>
+    <path d="M0 480 350 145l210 228 170-180 470 287v150H0z" fill="#f0bf62"/>
+    <path d="M0 520 230 330l180 150 190-175 255 198 180-115 165 130v112H0z" fill="#e4ece7"/>
+    <text x="70" y="130" fill="#fff" font-family="Arial, sans-serif" font-size="54" font-weight="700">HAIKU CHAMBER</text>
+    <text x="70" y="194" fill="#fff" font-family="Arial, sans-serif" font-size="32">Local business. Island community.</text>
+</svg>
