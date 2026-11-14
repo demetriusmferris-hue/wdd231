@@ -271,7 +271,19 @@ h1 {
 .social-links {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     gap: 1rem;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.social-links img {
+    width: 1rem;
+    height: 1rem;
 }
 
 .footer-project {
