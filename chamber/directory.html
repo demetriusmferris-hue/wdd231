@@ -3,93 +3,87 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description"
-        content="Explore local businesses and organizations that are members of the Haiku Chamber of Commerce on Maui, Hawaii.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directory - Chamber of Commerce Haiku</title>
     <meta name="author" content="Demetrious Ferris">
-    <meta property="og:title" content="Member Directory | Haiku Chamber of Commerce">
+    <meta name="description"
+        content="This site is to demonstrate our programming with a group and should reflect in a website that shows a Chamber of Commerece for Haiku.">
+    <meta property="og:title" content="Chamber of Commerce - Haiku">
     <meta property="og:description"
-        content="Meet the local businesses and organizations that make the Haiku community thrive.">
+        content="This site is to demonstrate our programming with a group and should reflect as a website that shows a Chamber of Commerece for Haiku.">
+    <meta property="og:url" content="https://demetriusmferris-hue.github.io/wdd231/">
     <meta property="og:image"
-        content="https://demetriusmferris-hue.github.io/wdd231/chamber/images/haiku-chamber-social.svg">
-    <meta property="og:url" content="https://demetriusmferris-hue.github.io/wdd231/chamber/directory.html">
-    <meta property="og:type" content="website">
-    <title>Member Directory | Haiku Chamber of Commerce</title>
+        content="https://demetriusmferris-hue.github.io/wdd231/chamber/images/haiku-hawaii.jpg">
+    <link rel="preload" href="data/members.json" as="fetch" type="application/json" crossorigin>
+    <link rel="preload" href="images/haiku-harvest.svg" as="image" fetchpriority="high">
+    <script src="scripts/directory.js" defer></script>
+    <link rel="stylesheet" href="styles/directory-normalize.css">
+    <link rel="stylesheet" href="styles/directory.css">
+    <link rel="stylesheet" href="styles/directory-larger.css">
+    <link rel="icon" href="images/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style"
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=optional"
-        onload="this.onload=null;this.rel='stylesheet'">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=optional"
+        rel="stylesheet" media="print" onload="this.media='all'">
     <noscript>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=optional" rel="stylesheet">
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=optional">
     </noscript>
-    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/small.css">
-    <link rel="stylesheet" href="styles/larger.css">
-    <script src="scripts/directory.js" defer></script>
 </head>
 
 <body>
-    <header class="site-header">
-        <a class="site-brand" href="index.html">
-            <img src="images/chamber-mark.svg" width="56" height="56" alt="">
+    <header>
+        <a class="site-brand" href="../index.html">
+            <img src="images/truck.svg" alt="">
             <span>Haiku Chamber of Commerce</span>
         </a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation"
-            aria-label="Open navigation menu">
+            aria-label="Toggle navigation">
             <span></span>
             <span></span>
             <span></span>
         </button>
-        <nav class="primary-navigation" id="primary-navigation" aria-label="Main navigation">
+        <nav id="primary-navigation">
             <a href="index.html">Home</a>
-            <a href="discover.html">Discover</a>
             <a href="directory.html" aria-current="page">Directory</a>
             <a href="join.html">Join</a>
+            <a href="contact.html">Contact</a>
         </nav>
     </header>
-
     <main>
-        <h1>Local Member Directory</h1>
-        <p class="intro">Find the people and businesses helping our Haiku and North Shore community grow.</p>
-        <div class="directory-controls" role="group" aria-label="Choose directory layout">
-            <button id="grid-view" type="button" aria-pressed="true" aria-controls="members">Grid view</button>
-            <button id="list-view" type="button" aria-pressed="false" aria-controls="members">List view</button>
+        <h1>Our Vendors</h1>
+        <div class="directory-controls" role="group" aria-label="Choose member directory layout">
+            <button id="grid-view" type="button" aria-pressed="true" aria-controls="members">Grid</button>
+            <button id="list-view" type="button" aria-pressed="false" aria-controls="members">List</button>
         </div>
         <p id="directory-status" class="directory-status" role="status" aria-live="polite">Loading members...</p>
         <section id="members" class="business-grid" aria-label="Chamber members"></section>
     </main>
-
-    <footer class="site-footer">
-        <section class="footer-contact" aria-label="Chamber contact information">
-            <h2>Haiku Chamber of Commerce</h2>
-            <address>
-                810 Kokomo Road<br>
-                Haiku, HI 96708
-            </address>
-            <p><a href="mailto:info@haikuchamber.org">info@haikuchamber.org</a></p>
-            <p><a href="tel:+18085550100">+1 808-555-0100</a></p>
-        </section>
-        <nav class="social-links" aria-label="Social media">
-            <a href="https://www.facebook.com/demetrius.ferris/">
-                <img src="images/facebook.svg" alt="" width="16" height="16">
-                Facebook
+    <footer>
+        <div class="footer-contact">
+            <p class="footer-name">Haiku Chamber of Commerce</p>
+            <p>1234 wayfinder street</p>
+            <p>100 Hawaii, USA</p>
+            <p>pcmasterrace@haikucc.org</p>
+            <p>+1 808 404 0404</p>
+        </div>
+        <nav class="social-links" aria-label="Social links">
+            <a href="https://github.com/demetriusmferris-hue/wdd231" aria-label="GitHub">
+                <img src="images/github.svg" alt="">
             </a>
-            <a href="https://github.com/demetriusmferris-hue/wdd231">
-                <img src="images/github.svg" alt="" width="16" height="16">
-                GitHub
+            <a href="https://www.linkedin.com/in/demetrious-ferris-4055b9359" aria-label="LinkedIn">
+                <img src="images/linkedin.svg" alt="">
             </a>
-            <a href="https://www.linkedin.com/in/demetrious-ferris-4055b9359">
-                <img src="images/linkedin.svg" alt="" width="16" height="16">
-                LinkedIn
+            <a href="https://www.youtube.com/" aria-label="YouTube">
+                <img src="images/youtube.svg" alt="">
             </a>
         </nav>
         <div class="footer-project">
-            <p>WDD 231 Class Project</p>
+            <p>WDD231 Class Project</p>
             <p>Demetrious Ferris</p>
-            <p>&copy; <span id="current-year"></span> Haiku Chamber of Commerce</p>
-            <p>Last modified: <time id="last-modified" datetime="2026-11-14T06:45:02Z"></time></p>
+            <p>©<span id="currentYear"></span> Haiku Chamber of Commerce</p>
+            <p>Last Modified: <span id="lastModified"></span></p>
         </div>
     </footer>
 </body>

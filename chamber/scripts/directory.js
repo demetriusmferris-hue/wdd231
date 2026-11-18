@@ -1,33 +1,31 @@
 document.documentElement.classList.add("js");
 
-const yearElement = document.querySelector("#current-year");
-const modifiedElement = document.querySelector("#last-modified");
+document.querySelector("#currentYear").textContent = new Date().getFullYear();
+document.querySelector("#lastModified").textContent = document.lastModified;
+
 const menuToggle = document.querySelector(".menu-toggle");
 const navigation = document.querySelector("#primary-navigation");
+
+menuToggle.addEventListener("click", () => {
+    const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
+    menuToggle.setAttribute("aria-expanded", !isExpanded);
+    navigation.classList.toggle("is-open", !isExpanded);
+});
+
 const membersContainer = document.querySelector("#members");
 const directoryStatus = document.querySelector("#directory-status");
 const gridViewButton = document.querySelector("#grid-view");
 const listViewButton = document.querySelector("#list-view");
-
-yearElement.textContent = new Date().getFullYear();
-modifiedElement.dateTime = new Date(document.lastModified).toISOString();
-modifiedElement.textContent = new Date(document.lastModified).toLocaleString();
-
-menuToggle.addEventListener("click", () => {
-    const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
-    menuToggle.setAttribute("aria-expanded", String(!isExpanded));
-    menuToggle.setAttribute("aria-label", isExpanded ? "Open navigation menu" : "Close navigation menu");
-    navigation.classList.toggle("is-open", !isExpanded);
-});
 
 gridViewButton.addEventListener("click", () => setDirectoryView("grid"));
 listViewButton.addEventListener("click", () => setDirectoryView("list"));
 
 function setDirectoryView(view) {
     const isGrid = view === "grid";
+    membersContainer.classList.toggle("business-grid", isGrid);
     membersContainer.classList.toggle("business-list", !isGrid);
-    gridViewButton.setAttribute("aria-pressed", String(isGrid));
-    listViewButton.setAttribute("aria-pressed", String(!isGrid));
+    gridViewButton.setAttribute("aria-pressed", isGrid);
+    listViewButton.setAttribute("aria-pressed", !isGrid);
 }
 
 function createMemberCard(member, index) {
@@ -52,18 +50,15 @@ function createMemberCard(member, index) {
     image.width = 160;
     image.height = 160;
     image.loading = index === 0 ? "eager" : "lazy";
+    if (index === 0) {
+        image.fetchPriority = "high";
+    }
 
     const information = document.createElement("div");
-    information.className = "business-card-info";
-
     const address = document.createElement("p");
     address.textContent = member.address;
     const phone = document.createElement("p");
-    const phoneLink = document.createElement("a");
-    phoneLink.href = `tel:${member.phone.replace(/[^\d+]/g, "")}`;
-    phoneLink.textContent = member.phone;
-    phone.append(phoneLink);
-
+    phone.textContent = member.phone;
     const website = document.createElement("p");
     const websiteLink = document.createElement("a");
     websiteLink.href = member.website;
@@ -73,12 +68,7 @@ function createMemberCard(member, index) {
     website.append(websiteLink);
 
     const membership = document.createElement("p");
-    const membershipLabel = ["", "Member", "Silver", "Gold"][member.membership];
-    membership.textContent = "Membership: ";
-    const level = document.createElement("span");
-    level.className = "membership-level";
-    level.textContent = membershipLabel;
-    membership.append(level);
+    membership.textContent = `Membership: ${["", "Member", "Silver", "Gold"][member.membership]}`;
 
     const description = document.createElement("p");
     description.textContent = member.description;
@@ -101,7 +91,8 @@ async function loadMembers() {
             throw new Error("Member directory data must be an array.");
         }
 
-        membersContainer.replaceChildren(...members.map(createMemberCard));
+        const cards = members.map(createMemberCard);
+        membersContainer.replaceChildren(...cards);
         directoryStatus.textContent = `${members.length} chamber members`;
     } catch (error) {
         console.error("Unable to load chamber members.", error);
