@@ -1,9 +1,10 @@
 :root {
-    --color-primary: #DC143C;
+    --color-primary: #B0002A;
     --color-dark: #000000;
     --color-grey: #1f1f1f;
     --color-light: #ffffff;
-    --color-highlight: #DC143C;
+    --color-highlight: #B0002A;
+    --color-accent: #FF829B;
     --color-clear: #ffffff00;
     --color-very-light: #ffffff;
     --color-shadow: #000000;
@@ -85,13 +86,14 @@ nav a {
 }
 
 nav a:hover {
-    color: var(--color-highlight);
+    color: var(--color-very-light);
+    text-decoration: underline;
 }
 
 nav a:focus-visible,
 .menu-toggle:focus-visible,
 .social-links a:focus-visible {
-    outline: 3px solid var(--color-highlight);
+    outline: 3px solid var(--color-accent);
     outline-offset: 2px;
 }
 
@@ -124,7 +126,7 @@ main h1 {
     min-width: 6rem;
     min-height: 2.75rem;
     padding: 0.5rem 1rem;
-    border: 1px solid var(--color-highlight);
+    border: 1px solid var(--color-accent);
     border-radius: 0.25rem;
     background-color: var(--color-primary);
     color: var(--color-very-light);
@@ -138,7 +140,7 @@ main h1 {
 }
 
 .directory-controls button:focus-visible {
-    outline: 3px solid var(--color-highlight);
+    outline: 3px solid var(--color-accent);
     outline-offset: 2px;
 }
 
@@ -156,7 +158,7 @@ main h1 {
 .business-card {
     overflow: hidden;
     border-radius: 0.5rem;
-    border: 1px solid var(--color-primary);
+    border: 1px solid var(--color-accent);
     background-color: var(--color-grey);
     color: var(--color-very-light);
     box-shadow: 0 2px 8px var(--color-primary);
@@ -172,7 +174,7 @@ main h1 {
 .business-card-tagline {
     margin: 0;
     padding: 0 1rem 0.75rem;
-    border-bottom: 2px solid var(--color-primary);
+    border-bottom: 2px solid var(--color-accent);
     text-align: center;
 }
 
@@ -209,11 +211,11 @@ main h1 {
 }
 
 .business-card-details a {
-    color: var(--color-highlight);
+    color: var(--color-accent);
 }
 
 .business-card-details a:focus-visible {
-    outline: 3px solid var(--color-highlight);
+    outline: 3px solid var(--color-accent);
     outline-offset: 2px;
 }
 
@@ -224,7 +226,7 @@ footer {
     padding: 1.5rem max(1rem, calc((100% - 1200px) / 2));
     background-color: var(--color-grey);
     color: var(--color-very-light);
-    border-top: 1px solid var(--color-primary);
+    border-top: 1px solid var(--color-accent);
 }
 
 footer p {
@@ -247,9 +249,11 @@ footer p {
     display: flex;
     width: 3.5rem;
     height: 3.5rem;
+    box-sizing: border-box;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
+    border: 2px solid var(--color-accent);
     background-color: var(--color-primary);
 }
 
