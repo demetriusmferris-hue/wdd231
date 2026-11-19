@@ -206,6 +206,14 @@ main h1 {
     box-shadow: var(--color-shadow);
 }
 
+.business-list .business-card-details {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.business-list .business-card-logo {
+    display: none;
+}
+
 .business-list .business-card:nth-child(even) {
     background-color: var(--color-grey);
 }
