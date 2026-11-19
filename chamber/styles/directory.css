@@ -1,9 +1,9 @@
 :root {
-    --color-primary: #8b1e1e;
+    --color-primary: #DC143C;
     --color-dark: #000000;
     --color-grey: #1f1f1f;
     --color-light: #ffffff;
-    --color-highlight: #b52a2a;
+    --color-highlight: #DC143C;
     --color-clear: #ffffff00;
     --color-very-light: #ffffff;
     --color-shadow: #000000;
@@ -21,7 +21,7 @@ header {
     align-items: center;
     gap: 0.75rem;
     padding: 0.75rem max(1rem, calc((100% - 1200px) / 2));
-    background-color: var(--color-dark);
+    background-color: var(--color-grey);
     color: var(--color-very-light)
 }
 
@@ -205,7 +205,7 @@ main h1 {
 }
 
 .business-list .business-card:nth-child(even) {
-    background-color: #1a1a1a;
+    background-color: var(--color-grey);
 }
 
 .business-card-details a {
