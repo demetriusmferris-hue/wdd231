@@ -115,7 +115,7 @@ function renderCurrentWeather(data) {
     currentDescription.textContent = data.weather[0].description;
     currentWeatherIcon.src = "https://openweathermap.org/img/wn/" +
         data.weather[0].icon + "@2x.png";
-    currentWeatherIcon.alt = "";
+    currentWeatherIcon.alt = data.weather[0].description;
 }
 
 function renderForecast(data, currentTimestamp) {
