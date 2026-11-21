@@ -6,7 +6,7 @@ document.querySelector("#lastModified").textContent = document.lastModified;
 const menuToggle = document.querySelector(".menu-toggle");
 const navigation = document.querySelector("#primary-navigation");
 
-menuToggle.addEventListener("click", () => {
+menuToggle.addEventListener("click", function () {
     const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
     menuToggle.setAttribute("aria-expanded", !isExpanded);
     navigation.classList.toggle("is-open", !isExpanded);
@@ -17,16 +17,19 @@ const directoryStatus = document.querySelector("#directory-status");
 const gridViewButton = document.querySelector("#grid-view");
 const listViewButton = document.querySelector("#list-view");
 
-gridViewButton.addEventListener("click", () => setDirectoryView("grid"));
-listViewButton.addEventListener("click", () => setDirectoryView("list"));
+gridViewButton.addEventListener("click", function () {
+    membersContainer.classList.add("business-grid");
+    membersContainer.classList.remove("business-list");
+    gridViewButton.setAttribute("aria-pressed", "true");
+    listViewButton.setAttribute("aria-pressed", "false");
+});
 
-function setDirectoryView(view) {
-    const isGrid = view === "grid";
-    membersContainer.classList.toggle("business-grid", isGrid);
-    membersContainer.classList.toggle("business-list", !isGrid);
-    gridViewButton.setAttribute("aria-pressed", isGrid);
-    listViewButton.setAttribute("aria-pressed", !isGrid);
-}
+listViewButton.addEventListener("click", function () {
+    membersContainer.classList.remove("business-grid");
+    membersContainer.classList.add("business-list");
+    gridViewButton.setAttribute("aria-pressed", "false");
+    listViewButton.setAttribute("aria-pressed", "true");
+});
 
 function createMemberCard(member, index) {
     const card = document.createElement("article");
@@ -50,9 +53,6 @@ function createMemberCard(member, index) {
     image.width = 160;
     image.height = 160;
     image.loading = index === 0 ? "eager" : "lazy";
-    if (index === 0) {
-        image.fetchPriority = "high";
-    }
 
     const information = document.createElement("div");
     const address = document.createElement("p");
@@ -65,16 +65,29 @@ function createMemberCard(member, index) {
     websiteLink.textContent = "Visit website";
     websiteLink.target = "_blank";
     websiteLink.rel = "noopener noreferrer";
-    website.append(websiteLink);
+    website.appendChild(websiteLink);
 
     const membership = document.createElement("p");
-    membership.textContent = `Membership: ${["", "Member", "Silver", "Gold"][member.membership]}`;
+    let membershipLevel = "Member";
+    if (member.membership === 2) {
+        membershipLevel = "Silver";
+    } else if (member.membership === 3) {
+        membershipLevel = "Gold";
+    }
+    membership.textContent = "Membership: " + membershipLevel;
 
     const description = document.createElement("p");
     description.textContent = member.description;
-    information.append(address, phone, website, membership, description);
-    details.append(image, information);
-    card.append(heading, tagline, details);
+    information.appendChild(address);
+    information.appendChild(phone);
+    information.appendChild(website);
+    information.appendChild(membership);
+    information.appendChild(description);
+    details.appendChild(image);
+    details.appendChild(information);
+    card.appendChild(heading);
+    card.appendChild(tagline);
+    card.appendChild(details);
 
     return card;
 }
@@ -91,8 +104,10 @@ async function loadMembers() {
             throw new Error("Member directory data must be an array.");
         }
 
-        const cards = members.map(createMemberCard);
-        membersContainer.replaceChildren(...cards);
+        membersContainer.textContent = "";
+        for (let i = 0; i < members.length; i++) {
+            membersContainer.appendChild(createMemberCard(members[i], i));
+        }
         directoryStatus.textContent = `${members.length} chamber members`;
     } catch (error) {
         console.error("Unable to load chamber members.", error);

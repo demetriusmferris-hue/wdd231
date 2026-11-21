@@ -10,13 +10,9 @@ const spotlightStatus = document.querySelector("#spotlight-status");
 document.documentElement.classList.add("js");
 
 if (menuToggle && navigation) {
-    menuToggle.addEventListener("click", () => {
+    menuToggle.addEventListener("click", function () {
         const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
-        if (isExpanded) {
-            menuToggle.setAttribute("aria-expanded", "false");
-        } else {
-            menuToggle.setAttribute("aria-expanded", "true");
-        }
+        menuToggle.setAttribute("aria-expanded", !isExpanded);
         navigation.classList.toggle("is-open", !isExpanded);
     });
 }
@@ -47,9 +43,13 @@ async function loadSpotlights() {
             throw new Error("Member data must be an array.");
         }
 
-        const eligibleMembers = members.filter(function (member) {
-            return member.membership === 2 || member.membership === 3;
-        });
+        const eligibleMembers = [];
+        for (let i = 0; i < members.length; i++) {
+            if (members[i].membership === 2 || members[i].membership === 3) {
+                eligibleMembers.push(members[i]);
+            }
+        }
+
         if (eligibleMembers.length === 0) {
             spotlightStatus.textContent = "No silver or gold members are available to feature.";
             return;
@@ -59,21 +59,34 @@ async function loadSpotlights() {
             return;
         }
 
-        const spotlightCount = eligibleMembers.length === 2 || Math.random() < 0.5 ? 2 : 3;
-        const shuffledMembers = eligibleMembers.slice();
-        for (let i = shuffledMembers.length - 1; i > 0; i--) {
-            const randomIndex = Math.floor(Math.random() * (i + 1));
-            const member = shuffledMembers[i];
-            shuffledMembers[i] = shuffledMembers[randomIndex];
-            shuffledMembers[randomIndex] = member;
+        let spotlightCount = 2;
+        if (eligibleMembers.length > 2 && Math.random() >= 0.5) {
+            spotlightCount = 3;
         }
 
-        const selectedMembers = shuffledMembers.slice(0, spotlightCount);
-        spotlightContainer.classList.toggle("spotlight-count-3", spotlightCount === 3);
-        spotlightContainer.replaceChildren(
-            ...selectedMembers.map(createSpotlightCard)
-        );
+        const shuffledMembers = [];
+        for (let i = 0; i < eligibleMembers.length; i++) {
+            shuffledMembers.push(eligibleMembers[i]);
+        }
 
+        for (let i = shuffledMembers.length - 1; i > 0; i--) {
+            const randomIndex = Math.floor(Math.random() * (i + 1));
+            const currentMember = shuffledMembers[i];
+            shuffledMembers[i] = shuffledMembers[randomIndex];
+            shuffledMembers[randomIndex] = currentMember;
+        }
+
+        spotlightContainer.textContent = "";
+        if (spotlightCount === 3) {
+            spotlightContainer.classList.add("spotlight-count-3");
+        } else {
+            spotlightContainer.classList.remove("spotlight-count-3");
+        }
+
+        for (let i = 0; i < spotlightCount; i++) {
+            const card = createSpotlightCard(shuffledMembers[i]);
+            spotlightContainer.appendChild(card);
+        }
         spotlightStatus.textContent = "Showing " + spotlightCount + " silver and gold members.";
     } catch (error) {
         console.error("Unable to load spotlight members.", error);

@@ -2,11 +2,6 @@
     box-sizing: border-box;
 }
 
-:root {
-    --color-clear: #ffffff00;
-}
-
-
 html {
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
@@ -32,5 +27,5 @@ img {
 }
 
 a {
-    background-color: var(--color-clear);
+    background-color: transparent;
 }
