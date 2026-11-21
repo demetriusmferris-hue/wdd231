@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Directory - Chamber of Commerce Haiku</title>
+    <title>Member Directory - Haiku Chamber of Commerce</title>
     <meta name="author" content="Demetrious Ferris">
     <meta name="description"
-        content="This site is to demonstrate our programming with a group and should reflect in a website that shows a Chamber of Commerece for Haiku.">
-    <meta property="og:title" content="Chamber of Commerce - Haiku">
+        content="Browse Haiku Chamber of Commerce members, learn about local businesses, and find their contact information.">
+    <meta property="og:title" content="Member Directory - Haiku Chamber of Commerce">
     <meta property="og:description"
-        content="This site is to demonstrate our programming with a group and should reflect as a website that shows a Chamber of Commerece for Haiku.">
-    <meta property="og:url" content="https://demetriusmferris-hue.github.io/wdd231/">
+        content="Browse Haiku Chamber of Commerce members, learn about local businesses, and find their contact information.">
+    <meta property="og:url" content="https://demetriusmferris-hue.github.io/wdd231/chamber/directory.html">
     <meta property="og:image"
         content="https://demetriusmferris-hue.github.io/wdd231/chamber/images/haiku-chamber-social.svg">
     <link rel="preload" href="data/members.json" as="fetch" type="application/json" crossorigin>
@@ -23,18 +23,13 @@
     <link rel="icon" href="images/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=optional"
-        id="font-stylesheet" rel="stylesheet" media="print">
-    <noscript>
-        <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=optional">
-    </noscript>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Inter:wght@400;700&display=swap">
 </head>
 
 <body>
     <header>
-        <a class="site-brand" href="../index.html">
+        <a class="site-brand" href="index.html">
             <img src="images/truck.svg" alt="">
             <span>Haiku Chamber of Commerce</span>
         </a>
@@ -52,7 +47,7 @@
         </nav>
     </header>
     <main>
-        <h1>Our Vendors</h1>
+        <h1>Chamber Member Directory</h1>
         <div class="directory-controls" role="group" aria-label="Choose member directory layout">
             <button id="grid-view" type="button" aria-pressed="true" aria-controls="members">Grid</button>
             <button id="list-view" type="button" aria-pressed="false" aria-controls="members">List</button>
