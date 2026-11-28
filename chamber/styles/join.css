@@ -1,13 +1,4 @@
-:root {
-    --color-primary: #B0002A;
-    --color-dark: #000000;
-    --color-grey: #1f1f1f;
-    --color-light: #ffffff;
-    --color-highlight: #B0002A;
-    --color-accent: #FF829B;
-    --color-clear: #ffffff00;
-    --color-very-light: #ffffff;
-    --color-shadow: #000000;
+.join-page {
     --form-border: #1f1f1f;
     --card-border: #d9d9d9;
     --card-shadow: #e6e6e6;
