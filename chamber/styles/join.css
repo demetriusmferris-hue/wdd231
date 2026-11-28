@@ -1,16 +1,16 @@
 .join-page {
-    --form-border: #1f1f1f;
-    --card-border: #d9d9d9;
-    --card-shadow: #e6e6e6;
-    --card-hover-shadow: #cccccc;
+    --form-border: #4b5563;
+    --card-border: #aab4be;
+    --card-shadow: rgba(0, 0, 0, 0.12);
+    --card-hover-shadow: rgba(0, 0, 0, 0.2);
     --br: #9c5d32;
     --si: #71818a;
     --gl: #b68b00;
-    --dialog-backdrop: rgba(0, 0, 0, 0.5);
-    --membership-np: #fff0f3;
-    --membership-br: #f7eee8;
-    --membership-si: #edf1f3;
-    --membership-gl: #fff8df;
+    --dialog-backdrop: rgba(0, 0, 0, 0.55);
+    --membership-np: #fce4ea;
+    --membership-br: #f3e0d4;
+    --membership-si: #e2e9ee;
+    --membership-gl: #fff0bf;
 }
 
 .join-layout {
@@ -35,6 +35,7 @@
     padding: 0.65rem;
     width: 100%;
     border: 1px solid var(--form-border);
+    background-color: var(--color-very-light);
     color: var(--color-dark);
     border-radius: 0.25rem;
     font: inherit;
@@ -63,6 +64,7 @@
 
 .membership-card {
     background-color: var(--membership, var(--color-very-light));
+    color: var(--color-dark);
     padding: 1rem;
     border: 1px solid var(--card-border);
     border-top: 0.35rem solid var(--color-primary);
@@ -149,6 +151,7 @@ dialog {
     padding: 1.5rem;
     border: 2px solid var(--color-primary);
     border-radius: 0.5rem;
+    background-color: var(--color-very-light);
     color: var(--color-dark);
     width: 90%;
     max-width: 34rem;
@@ -221,6 +224,13 @@ dialog li {
     border-radius: 0.25rem;
     font-weight: 700;
     text-decoration: none;
+}
+
+.join-layout input:focus-visible,
+.join-layout select:focus-visible,
+.join-layout textarea:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
 }
 
 @media screen and (min-width: 48rem) {

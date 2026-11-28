@@ -1,4 +1,5 @@
 :root {
+    color-scheme: only light;
     --color-primary: #B0002A;
     --color-dark: #000000;
     --color-grey: #1f1f1f;
@@ -13,6 +14,7 @@
 body {
     color: var(--color-dark);
     font-family: "Inter", "Fira Sans", Arial, sans-serif;
+    background-color: var(--color-very-light);
 }
 
 header {
