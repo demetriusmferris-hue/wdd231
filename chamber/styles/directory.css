@@ -49,7 +49,7 @@ header {
     padding: 0.5rem;
     border: 1px solid var(--color-very-light);
     border-radius: 0.25rem;
-    background: var(--color-clear);
+    background: none;
     cursor: pointer;
 }
 
@@ -85,7 +85,7 @@ nav a {
 }
 
 nav a:hover {
-    color: var(--color-accent);
+    color: var(--color-highlight);
 }
 
 nav a:focus-visible,
@@ -116,58 +116,13 @@ main h1 {
 
 .hero {
     position: relative;
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
+    width: 100%;
     margin-bottom: 1.5rem;
 }
 
 .hero img {
-    display: block;
     width: 100%;
-    height: auto;
     border-radius: 0.2rem;
-}
-
-.home-page .hero {
-    width: 100%;
-    margin-left: 0;
-}
-
-.home-content-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 1.25rem;
-}
-
-.home-events,
-.spotlight-section {
-    padding: 1.25rem;
-    border-radius: 0.5rem;
-    background-color: var(--color-light);
-}
-
-.home-events h2,
-.spotlight-section h2 {
-    margin: 0 0 1rem;
-    font-size: 1.25rem;
-}
-
-.event-card {
-    padding: 1rem;
-    border-left: 4px solid var(--color-primary);
-    background-color: var(--color-very-light);
-}
-
-.event-card h3 {
-    margin: 0 0 0.75rem;
-}
-
-.event-card p {
-    margin: 0 0 0.75rem;
-}
-
-.event-card p:last-child {
-    margin-bottom: 0;
 }
 
 .call-to-action {
@@ -271,7 +226,7 @@ main h1 {
 
 .spotlight-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 1rem;
 }
 
@@ -343,10 +298,14 @@ main h1 {
 
 .business-card-details {
     display: grid;
-    grid-template-columns: 35% 1fr;
+    grid-template-columns: minmax(0, 35%) minmax(0, 1fr);
     align-items: start;
     gap: 1rem;
     padding: 1rem;
+}
+
+.business-card-details > div {
+    min-width: 0;
 }
 
 .business-card-logo {
@@ -357,7 +316,7 @@ main h1 {
 
 .business-card-details p {
     margin: 0 0 0.75rem;
-    word-wrap: break-word;
+    overflow-wrap: anywhere;
 }
 
 .business-list {

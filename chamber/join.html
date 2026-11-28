@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join the Haiku Chamber of Commerce</title>
+    <meta name="author" content="Demetrious Ferris">
+    <meta name="description"
+        content="Apply to join the Haiku Chamber of Commerce and grow your local business network.">
+    <meta property="og:title" content="Join the Haiku Chamber of Commerce">
+    <meta property="og:description"
+        content="Apply to join the Haiku Chamber of Commerce and grow your local business network.">
+    <meta property="og:url" content="https://demetriusmferris-hue.github.io/wdd231/chamber/join.html">
+    <meta property="og:image"
+        content="https://demetriusmferris-hue.github.io/wdd231/chamber/images/haiku-chamber-social.svg">
+    <script type="module" src="scripts/join.js"></script>
+    <link rel="stylesheet" href="styles/directory-normalize.css">
+    <link rel="stylesheet" href="styles/directory.css">
+    <link rel="stylesheet" href="styles/directory-larger.css">
+    <link rel="stylesheet" href="styles/join.css">
+    <link rel="icon" href="images/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Inter:wght@400;700&display=swap">
+</head>
+
+<body>
+    <header>
+        <a class="site-brand" href="index.html">
+            <img src="images/truck.svg" alt="">
+            <span>Haiku Chamber of Commerce</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation"
+            aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="primary-navigation">
+            <a href="index.html">Home</a>
+            <a href="directory.html">Directory</a>
+            <a href="join.html" aria-current="page">Join</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Join the Haiku Chamber of Commerce</h1>
+        <div class="join-layout">
+            <form action="thankyou.html" method="get">
+                <label>First name
+                    <input type="text" id="first-name" name="firstName" autocomplete="given-name"
+                        title="Enter your first name" required>
+                </label>
+                <label for="last-name">Last name
+                    <input type="text" id="last-name" name="lastName" autocomplete="family-name"
+                        title="Enter your last name" required>
+                </label>
+                <label for="organization-title">Organizational title
+                    <input type="text" id="organization-title" name="organizationTitle"
+                        autocomplete="organization-title" pattern="[A-Za-z \-]{7,}"
+                        title="Use at least seven letters, spaces, or hyphens">
+                </label>
+                <label for="email">Email address
+                    <input type="email" id="email" name="email" autocomplete="email"
+                        placeholder="name@example.com" title="Enter a valid email address" required>
+                </label>
+                <label for="phone">Mobile phone number
+                    <input type="tel" id="phone" name="phone" autocomplete="tel"
+                        title="Enter your mobile phone number" required>
+                </label>
+                <label for="organization">Business or organization name
+                    <input type="text" id="organization" name="organization"
+                        autocomplete="organization" title="Enter your business or organization name" required>
+                </label>
+                <label for="membership">Membership level
+                    <select id="membership" name="membership" title="Choose a membership level" required>
+                        <option value="" selected disabled>Select a membership</option>
+                        <option value="np">NP Membership (no fee)</option>
+                        <option value="bronze">Bronze Membership</option>
+                        <option value="silver">Silver Membership</option>
+                        <option value="gold">Gold Membership</option>
+                    </select>
+                </label>
+                <label for="description">Business or organization description
+                    <textarea id="description" name="description" title="Describe your business or organization"
+                        rows="5"></textarea>
+                </label>
+                <input type="hidden" id="timestamp" name="timestamp">
+                <input class="join-submit" type="submit" value="Submit membership application">
+            </form>
+
+            <aside class="membership-section" aria-labelledby="membership-heading">
+                <h2 id="membership-heading">Membership levels</h2>
+                <div class="membership-cards">
+                    <article class="membership-card membership-np">
+                        <h3>NP Membership</h3>
+                        <p>For nonprofit organizations</p>
+                        <p class="membership-price">No fee</p>
+                        <a href="#np-benefits" data-dialog="np-benefits">View benefits</a>
+                    </article>
+                    <article class="membership-card membership-bronze">
+                        <h3>Bronze Membership</h3>
+                        <p>Build your local connections</p>
+                        <p class="membership-price">$50 per year</p>
+                        <a href="#bronze-benefits" data-dialog="bronze-benefits">View benefits</a>
+                    </article>
+                    <article class="membership-card membership-silver">
+                        <h3>Silver Membership</h3>
+                        <p>Grow your reach and visibility</p>
+                        <p class="membership-price">$100 per year</p>
+                        <a href="#silver-benefits" data-dialog="silver-benefits">View benefits</a>
+                    </article>
+                    <article class="membership-card membership-gold">
+                        <h3>Gold Membership</h3>
+                        <p>Make the most with every opportunity</p>
+                        <p class="membership-price">$250 per year</p>
+                        <a href="#gold-benefits" data-dialog="gold-benefits">View benefits</a>
+                    </article>
+                </div>
+            </aside>
+        </div>
+        <dialog id="np-benefits" aria-labelledby="np-benefits-heading">
+            <h2 id="np-benefits-heading">NP Membership Benefits</h2>
+            <p>For nonprofit organizations at no cost.</p>
+            <ul>
+                <li>Access to chamber networking events</li>
+                <li>Community and nonprofit resource listings</li>
+                <li>Invitations to nonprofit training sessions</li>
+            </ul>
+            <button class="dialog-close" type="button">Close</button>
+        </dialog>
+        <dialog id="bronze-benefits" aria-labelledby="bronze-benefits-heading">
+            <h2 id="bronze-benefits-heading">Bronze Membership Benefits</h2>
+            <p>$50 per year.</p>
+            <ul>
+                <li>All NP Membership benefits</li>
+                <li>Business listing in the chamber directory</li>
+                <li>Invitations to member networking events</li>
+                <li>Discounted admission to chamber workshops</li>
+            </ul>
+            <button class="dialog-close" type="button">Close</button>
+        </dialog>
+        <dialog id="silver-benefits" aria-labelledby="silver-benefits-heading">
+            <h2 id="silver-benefits-heading">Silver Membership Benefits</h2>
+            <p>$100 per year.</p>
+            <ul>
+                <li>All Bronze Membership benefits</li>
+                <li>Discounts on chamber event registrations</li>
+                <li>One business spotlight on the chamber homepage each year</li>
+                <li>Priority access to business training sessions</li>
+            </ul>
+            <button class="dialog-close" type="button">Close</button>
+        </dialog>
+        <dialog id="gold-benefits" aria-labelledby="gold-benefits-heading">
+            <h2 id="gold-benefits-heading">Gold Membership Benefits</h2>
+            <p>$250 per year.</p>
+            <ul>
+                <li>All Silver Membership benefits</li>
+                <li>Two additional homepage business spotlights each year</li>
+                <li>Complimentary admission for two to select chamber events</li>
+                <li>Featured placement in the chamber directory</li>
+                <li>One-on-one business development consultation</li>
+            </ul>
+            <button class="dialog-close" type="button">Close</button>
+        </dialog>
+    </main>
+    <footer>
+        <div class="footer-contact">
+            <p class="footer-name">Haiku Chamber of Commerce</p>
+            <p>1234 wayfinder street</p>
+            <p>100 Hawaii, USA</p>
+            <p>pcmasterrace@haikucc.org</p>
+            <p>+1 808 404 0404</p>
+        </div>
+        <nav class="social-links" aria-label="Social links">
+            <a href="https://github.com/demetriusmferris-hue/wdd231" aria-label="GitHub">
+                <img src="images/github.svg" alt="">
+            </a>
+            <a href="https://www.linkedin.com/in/demetrious-ferris-4055b9359" aria-label="LinkedIn">
+                <img src="images/linkedin.svg" alt="">
+            </a>
+            <a href="https://www.youtube.com/" aria-label="YouTube">
+                <img src="images/youtube.svg" alt="">
+            </a>
+        </nav>
+        <div class="footer-project">
+            <p>WDD231 Class Project</p>
+            <p>Demetrious Ferris</p>
+            <p>©<span id="currentYear"></span> Haiku Chamber of Commerce</p>
+            <p>Last Modified: <span id="lastModified"></span></p>
+        </div>
+    </footer>
+</body>
+
+</html>
